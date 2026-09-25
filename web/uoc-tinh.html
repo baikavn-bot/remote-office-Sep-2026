@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ước tính Remote Office · BAIKA</title>
+<meta name="description" content="Ước tính chi phí thuê ngoài việc văn phòng và đăng ký buổi khảo sát miễn phí 45 phút với BAIKA.">
+<meta property="og:title" content="Ước tính Remote Office · BAIKA">
+<meta property="og:description" content="Ước tính chi phí thuê ngoài việc văn phòng và đăng ký buổi khảo sát miễn phí 45 phút với BAIKA.">
+<meta property="og:type" content="website">
+<style>img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --navy:#0B2545; --navy-700:#1B4A7A; --navy-100:#E8EEF4;
+  --cyan-400:#22C4DE; --cyan-500:#00B0CC; --cyan-700:#00708C; --cyan-50:#E6F4F8;
+  --ink:#0B2545; --ink-soft:#33465C; --muted:#5A6B7B; --line:#D5DDE5;
+  --bg:#FFFFFF; --bg-alt:#F5F8FB; --card:#FFFFFF; --band:#0B2545; --band-ink:#FFFFFF;
+  --field:#FFFFFF;
+  --display:"Spectral",Georgia,"Times New Roman",serif;
+  --sans:"Be Vietnam Pro","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ink:#E9F1F7; --ink-soft:#C3D3E0; --muted:#9BAFC0; --line:#24405C;
+    --bg:#061627; --bg-alt:#0B2039; --card:#0E2540; --navy-100:#12314F;
+    --cyan-50:#0F2E43; --cyan-700:#6FD8EC; --band:#041120; --band-ink:#F2F8FC; --field:#0A2138;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ink:#E9F1F7; --ink-soft:#C3D3E0; --muted:#9BAFC0; --line:#24405C;
+  --bg:#061627; --bg-alt:#0B2039; --card:#0E2540; --navy-100:#12314F;
+  --cyan-50:#0F2E43; --cyan-700:#6FD8EC; --band:#041120; --band-ink:#F2F8FC; --field:#0A2138;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:1000px;margin:0 auto;padding-inline:20px}
+section{padding-block:clamp(32px,4.5vw,56px)}
+h1,h2,h3{font-family:var(--display);font-weight:700;text-wrap:balance;margin:0;line-height:1.18}
+h1{font-size:clamp(29px,4.4vw,46px)}
+h2{font-size:clamp(23px,3vw,31px)}
+h3{font-size:18px}
+p{margin:0}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan-700)}
+.lede{font-size:17px;color:var(--ink-soft);max-width:60ch}
+.small{font-size:13px;color:var(--muted)}
+a{color:var(--cyan-700)}
+:focus-visible{outline:2px solid var(--cyan-500);outline-offset:3px}
+.alt{background:var(--bg-alt)}
+
+/* hero */
+.hero{background:var(--band);color:var(--band-ink);padding-block:clamp(40px,5.5vw,68px)}
+.hero .eyebrow{color:var(--cyan-400)}
+.hero h1{color:var(--band-ink);max-width:18ch;margin-top:8px}
+.hero p{color:#C9DDEA;max-width:56ch;margin-top:14px;font-size:17px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{border:1px solid #33628A;color:#D8EAF5;font-size:13px;padding:6px 12px;border-radius:999px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{display:inline-block;font-weight:600;font-size:15px;padding:13px 22px;border-radius:2px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:var(--sans)}
+.btn-primary{background:var(--cyan-400);color:#04202F}
+.btn-ghost{border-color:#4E7FA6;color:var(--band-ink);background:transparent}
+.btn-solid{background:var(--navy);color:#fff;border:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn-solid{background:var(--cyan-400);color:#04202F}}
+:root[data-theme="dark"] .btn-solid{background:var(--cyan-400);color:#04202F}
+
+/* estimator */
+.tool{display:grid;grid-template-columns:1fr .9fr;gap:clamp(20px,3vw,36px);margin-top:24px;align-items:start}
+fieldset{border:none;margin:0;padding:0 0 18px}
+legend{font-weight:600;font-size:15px;padding:0;margin-bottom:10px}
+.areas{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.areas label{display:flex;gap:9px;align-items:flex-start;border:1px solid var(--line);background:var(--card);padding:9px 11px;font-size:14px;cursor:pointer}
+.areas input{margin-top:3px;accent-color:var(--cyan-500)}
+.areas label:has(input:checked){border-color:var(--cyan-500);background:var(--cyan-50)}
+.row{display:flex;justify-content:space-between;align-items:baseline;font-size:15px;margin-bottom:6px}
+.row b{font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--cyan-500)}
+.result{background:var(--band);color:var(--band-ink);padding:22px 22px 24px;position:sticky;top:env(safe-area-inset-top,0px)}
+.result .eyebrow{color:var(--cyan-400)}
+.result .big{font-family:var(--display);font-size:38px;font-weight:700;color:var(--cyan-400);line-height:1.15;margin-top:6px;font-variant-numeric:tabular-nums}
+.result .sub{color:#C9DDEA;font-size:14px}
+.rline{display:flex;justify-content:space-between;gap:12px;font-size:15px;padding:9px 0;border-bottom:1px solid #1F4467}
+.rline span{color:#C9DDEA}
+.rline b{font-variant-numeric:tabular-nums}
+.pill{display:inline-block;margin-top:16px;background:var(--cyan-400);color:#04202F;font-weight:600;font-size:14px;padding:7px 14px}
+
+/* form */
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px;max-width:760px}
+.form label{display:block;font-size:14px;font-weight:600;margin-bottom:5px}
+.form input,.form select,.form textarea{width:100%;font-family:var(--sans);font-size:15px;padding:11px 12px;border:1px solid var(--line);background:var(--field);color:var(--ink);border-radius:2px}
+.full{grid-column:1/-1}
+.status{margin-top:14px;font-size:15px;padding:12px 14px;border-left:3px solid var(--cyan-500);background:var(--cyan-50);color:var(--ink)}
+.faq details{border-bottom:1px solid var(--line);padding:12px 0}
+.faq summary{cursor:pointer;font-weight:600;font-family:var(--display);font-size:17px;list-style:none;display:grid;grid-template-columns:1fr auto;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--cyan-700);font-weight:700}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin-top:8px;color:var(--ink-soft);font-size:15px;max-width:68ch}
+.contact{display:flex;flex-wrap:wrap;gap:6px 28px;margin-top:14px;font-size:17px}
+.contact b{font-family:var(--display)}
+.foot{font-size:13px;color:var(--muted);padding-block:22px;border-top:1px solid var(--line)}
+@media (max-width:860px){
+  .tool{grid-template-columns:1fr}
+  .result{position:static}
+  .form{grid-template-columns:1fr}
+}
+@media (max-width:520px){.areas{grid-template-columns:1fr}}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">BAIKA Remote Office</p>
+    <h1>Giao việc văn phòng cho BAIKA, đỡ một khoản tuyển người</h1>
+    <p>Hành chính, nhân sự, kế toán, chăm sóc khách hàng, báo giá — bạn gửi yêu cầu, BAIKA trả kết quả đúng hạn. Không tuyển thêm người, không chấm công, có hoá đơn VAT.</p>
+    <div class="chips">
+      <span class="chip">Từ 4,9 triệu/tháng</span>
+      <span class="chip">Chạy sau 7 ngày</span>
+      <span class="chip">Đổi gói theo tháng</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#uoc-tinh">Ước tính chi phí</a>
+      <a class="btn btn-ghost" href="#dang-ky">Đăng ký tư vấn</a>
+    </div>
+  </div>
+</header>
+
+<section id="uoc-tinh">
+  <div class="wrap">
+    <p class="eyebrow">Công cụ ước tính</p>
+    <h2>Chọn việc muốn giao, xem ngay khoản chênh lệch</h2>
+    <p class="lede" style="margin-top:10px">Một nhân viên lương 10 triệu tốn của doanh nghiệp khoảng 14–15 triệu mỗi tháng, tính cả bảo hiểm, kinh phí công đoàn và chỗ ngồi.</p>
+    <div class="tool">
+      <form id="calc" autocomplete="off">
+        <fieldset>
+          <legend>Bạn muốn giao nhóm việc nào?</legend>
+          <div class="areas">
+            <label><input type="checkbox" name="area" value="Hành chính – văn thư" id="a1" checked> Hành chính – văn thư</label>
+            <label><input type="checkbox" name="area" value="Nhân sự – tiền lương" id="a2" checked> Nhân sự – tiền lương</label>
+            <label><input type="checkbox" name="area" value="Kế toán – thuế" id="a3"> Kế toán – thuế</label>
+            <label><input type="checkbox" name="area" value="Chăm sóc khách hàng" id="a4" checked> Chăm sóc khách hàng</label>
+            <label><input type="checkbox" name="area" value="Hỗ trợ kinh doanh" id="a5"> Hỗ trợ kinh doanh</label>
+            <label><input type="checkbox" name="area" value="Nội dung – livestream" id="a6"> Nội dung – livestream</label>
+            <label><input type="checkbox" name="area" value="Tuân thủ – quy chế" id="a7"> Tuân thủ – quy chế</label>
+            <label><input type="checkbox" name="area" value="Số liệu – báo cáo" id="a8"> Số liệu – báo cáo</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Nếu tự tuyển, bạn cần mấy người?</legend>
+          <div class="row"><span>Số vị trí</span><b id="headOut">2 người</b></div>
+          <input type="range" id="heads" min="1" max="5" step="1" value="2" aria-label="Số vị trí cần tuyển">
+        </fieldset>
+        <fieldset>
+          <legend>Mức lương dự kiến mỗi người</legend>
+          <div class="row"><span>Lương tháng</span><b id="wageOut">10.000.000 đ</b></div>
+          <input type="range" id="wage" min="7000000" max="25000000" step="500000" value="10000000" aria-label="Mức lương mỗi người">
+          <p class="small" style="margin-top:8px">Chi phí tự tuyển = lương + 21,5% bảo hiểm + 2% kinh phí công đoàn + khoảng 1,8 triệu chỗ ngồi, thiết bị, tuyển dụng.</p>
+        </fieldset>
+      </form>
+      <aside class="result" aria-live="polite">
+        <p class="eyebrow">Ước tính mỗi tháng</p>
+        <p class="big" id="saveOut">14.500.000 đ</p>
+        <p class="sub" id="saveYear">Khoảng 174 triệu mỗi năm</p>
+        <div style="margin-top:18px">
+          <div class="rline"><span>Tự tuyển <b id="headLine">2 người</b></span><b id="hireOut">24.400.000 đ</b></div>
+          <div class="rline"><span>Gói BAIKA đề xuất</span><b id="planOut">9.900.000 đ</b></div>
+        </div>
+        <p class="pill" id="planName">Gói Vận hành</p>
+        <p class="sub" id="planWhy" style="margin-top:12px">3 nhóm việc, 100 đơn vị công việc mỗi tháng.</p>
+      </aside>
+    </div>
+    <p class="small" style="margin-top:16px">Con số mang tính tham khảo, chưa gồm VAT. Giá chính thức theo báo giá sau buổi khảo sát 45 phút.</p>
+  </div>
+</section>
+
+<section class="alt" id="dang-ky">
+  <div class="wrap">
+    <p class="eyebrow">Đăng ký tư vấn</p>
+    <h2>Để lại thông tin, BAIKA gọi lại trong 24 giờ làm việc</h2>
+    <p class="lede" style="margin-top:10px">Buổi khảo sát 45 phút, miễn phí. BAIKA chỉ ra việc nào nên giao, việc nào nên giữ và báo giá theo đúng khối lượng của bạn.</p>
+    <form class="form" id="lead">
+      <div><label for="name">Họ và tên</label><input id="name" name="name" required maxlength="80"></div>
+      <div><label for="phone">Số điện thoại</label><input id="phone" name="phone" required maxlength="20" inputmode="tel"></div>
+      <div><label for="company">Công ty</label><input id="company" name="company" maxlength="120"></div>
+      <div><label for="size">Quy mô nhân sự</label>
+        <select id="size" name="size">
+          <option>Dưới 10 người</option><option selected>10 – 30 người</option>
+          <option>30 – 100 người</option><option>Trên 100 người</option>
+        </select>
+      </div>
+      <div class="full"><label for="note">Việc bạn muốn giao (không bắt buộc)</label><textarea id="note" name="note" rows="3" maxlength="500"></textarea></div>
+      <div class="full">
+        <button class="btn btn-solid" type="submit" id="send">Gửi thông tin</button>
+        <span class="small" id="hint" style="margin-left:10px">Thông tin chỉ dùng để liên hệ tư vấn.</span>
+      </div>
+    </form>
+    <div class="status" id="status" hidden></div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <p class="eyebrow">Hỏi nhanh</p>
+    <h2>Ba điều khách hay hỏi</h2>
+    <div style="margin-top:12px">
+      <details open><summary>Dùng dịch vụ thì có hết nghĩa vụ đóng BHXH không?</summary><p>Với nhân viên bạn đang trực tiếp sử dụng thì nghĩa vụ vẫn giữ nguyên. Cái bạn tiết kiệm được là không phải tuyển thêm người cho những việc BAIKA làm thay.</p></details>
+      <details><summary>Ai làm việc trực tiếp với tôi?</summary><p>Một điều phối viên phụ trách riêng. Bạn gửi yêu cầu qua cổng, BAIKA chọn người phù hợp và chịu trách nhiệm về kết quả, nên có người nghỉ thì việc vẫn chạy.</p></details>
+      <details><summary>Bao lâu thì bắt đầu được?</summary><p>Trong 7 ngày làm việc sau khi ký hợp đồng. Không bắt ký dài hạn, đổi gói theo tháng.</p></details>
+    </div>
+    <div class="contact">
+      <span>Điện thoại <b>0905 247 365</b></span>
+      <span>Email <b>baika.vn@gmail.com</b></span>
+    </div>
+    <p class="small" style="margin-top:8px">Công ty Cổ phần Công nghệ BAIKA · Tầng 15, 72 Lê Thánh Tôn, Phường Sài Gòn, TP. Hồ Chí Minh</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <p class="foot">Nội dung trên trang mang tính giới thiệu dịch vụ, không phải đề nghị giao kết hợp đồng. Điều khoản chính thức theo hợp đồng dịch vụ ký giữa hai bên.</p>
+</div>
+
+<script>
+(function(){
+  var vnd = function(n){ return new Intl.NumberFormat('vi-VN').format(Math.round(n)) + ' đ'; };
+  var PLANS = [
+    {max:1, name:'Gói Khởi đầu', price:4900000, why:'1 nhóm việc, 40 đơn vị công việc mỗi tháng.'},
+    {max:3, name:'Gói Vận hành', price:9900000, why:'3 nhóm việc, 100 đơn vị công việc mỗi tháng.'},
+    {max:8, name:'Gói Trọn gói', price:19900000, why:'5 nhóm việc trở lên, 220 đơn vị công việc, ưu tiên thời gian trả kết quả.'}
+  ];
+  var $ = function(id){ return document.getElementById(id); };
+  var heads = $('heads'), wage = $('wage');
+  function areas(){ return Array.prototype.filter.call(document.querySelectorAll('input[name=area]'), function(c){return c.checked;}); }
+  function plan(n){ for(var i=0;i<PLANS.length;i++){ if(n<=PLANS[i].max) return PLANS[i]; } return PLANS[2]; }
+  function calc(){
+    var n = parseInt(heads.value,10), w = parseInt(wage.value,10);
+    var perHead = w * 1.235 + 1800000;
+    var hire = perHead * n;
+    var p = plan(Math.max(areas().length,1));
+    var save = Math.max(hire - p.price, 0);
+    $('headOut').textContent = n + ' người';
+    $('headLine').textContent = n + ' người';
+    $('wageOut').textContent = vnd(w);
+    $('hireOut').textContent = vnd(hire);
+    $('planOut').textContent = vnd(p.price);
+    $('planName').textContent = p.name;
+    $('planWhy').textContent = p.why;
+    $('saveOut').textContent = vnd(save);
+    $('saveYear').textContent = save > 0
+      ? 'Khoảng ' + new Intl.NumberFormat('vi-VN').format(Math.round(save*12/1000000)) + ' triệu mỗi năm'
+      : 'Khối lượng việc này nên giữ người làm trong công ty.';
+    return {heads:n, wage:w, hire:hire, plan:p.name, planPrice:p.price, save:save, areas:areas().map(function(c){return c.value;})};
+  }
+  document.getElementById('calc').addEventListener('input', calc);
+  var state = calc();
+  document.getElementById('calc').addEventListener('input', function(){ state = calc(); });
+
+  var form = $('lead'), status = $('status'), btn = $('send');
+  function show(msg){ status.hidden = false; status.textContent = msg; }
+  var dbp = null;
+  try { dbp = window.claude && window.claude.use ? window.claude.use('db') : null; } catch(e){ dbp = null; }
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var s = calc();
+    var lead = {
+      name: $('name').value.trim(),
+      phone: $('phone').value.trim(),
+      company: $('company').value.trim(),
+      size: $('size').value,
+      note: $('note').value.trim(),
+      areas: s.areas,
+      plan: s.plan,
+      estSave: s.save,
+      createdAt: new Date().toISOString()
+    };
+    if(!lead.name || !lead.phone){ show('Vui lòng điền họ tên và số điện thoại.'); return; }
+    btn.disabled = true;
+    show('Đang gửi…');
+    var done = function(ok){
+      btn.disabled = false;
+      if(ok){
+        form.reset(); calc();
+        show('Đã nhận thông tin. BAIKA sẽ gọi lại trong 24 giờ làm việc.');
+      } else {
+        show('Chưa gửi được từ trình duyệt này. Bạn gọi 0905 247 365 hoặc gửi email tới baika.vn@gmail.com giúp BAIKA nhé — quan tâm: ' + (lead.areas.join(', ') || 'chưa chọn') + '.');
+      }
+    };
+    Promise.resolve(dbp).then(function(db){
+      if(!db){ done(false); return; }
+      var id = 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2,7);
+      return db.doc('leads/' + id).set(lead).then(function(){ done(true); });
+    }).catch(function(){ done(false); });
+  });
+})();
+</script>
+
+</body>
+</html>
