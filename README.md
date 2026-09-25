@@ -1,55 +1,51 @@
-# BAIKA Remote Office — bộ tài liệu và trang web (tháng 9/2026)
+# BAIKA Remote Office — hồ sơ thiết kế
 
-Kho này chứa toàn bộ nội dung sản phẩm **BAIKA Remote Office**: trang web giới thiệu, bản copy cho CMS, và các văn bản gửi khách.
+Kho này chứa **tài liệu thiết kế** của sản phẩm Remote Office: spec, token xuất từ Figma, bản đồ file Figma và tài liệu gửi khách.
 
-Sản phẩm: BAIKA nhận làm thay việc văn phòng lặp lại (hành chính, nhân sự – tiền lương, kế toán – thuế, chăm sóc khách hàng, hỗ trợ kinh doanh, nội dung – livestream, tuân thủ – quy chế, số liệu – báo cáo). Khách giao việc qua cổng yêu cầu và nghiệm thu theo kết quả, không quản lý lao động.
+**Kho này không chứa code trang web.** Website `baika.vn` là một site Astro duy nhất nằm ở repo `BK.-Web-Update-Sep-2026`, dùng chung `src/styles/tokens.css`, `BaseLayout.astro` và bộ component của hệ. Dựng Remote Office thành một site riêng sẽ sinh ra bộ token thứ hai và bộ component thứ hai — điều mà `CLAUDE.md` của repo đó cấm.
 
 ## Cấu trúc
 
 ```
-web/                  Trang web, HTML tĩnh, không cần build
-  index.html          Trang flagship giới thiệu sản phẩm
-  uoc-tinh.html       Subpage marketing: công cụ ước tính chi phí + form đăng ký tư vấn
-noi-dung/
-  noi-dung-trang-web.md   Bản copy tách theo từng khối để dán vào CMS, kèm gợi ý SEO
-tai-lieu/
-  ...DeXuatDichVu...      Proposal gửi khách, song ngữ Việt – Anh (Word + PDF)
-  ...MoTaSanPham...       Bản mô tả sản phẩm, song ngữ (Word + PDF)
-tools/
-  build-*.js              Script Node dựng lại hai tệp Word bằng thư viện docx
+spec/
+  BAIKA_Spec_v3_RemoteOffice_20260925.md        Spec trang Remote Office (Phần 13)
+  BAIKA_Spec_v3.1_...Motion_Request...md        Chuyển động, luồng yêu cầu tư vấn, chuẩn Tablet/Mobile (Phần 14–18)
+  nguon/                                        Tóm tắt spec hợp nhất v2 để tra nhanh khung trang và ràng buộc kỹ thuật
+tokens/
+  global-tokens.json                            Toàn bộ token xuất từ Figma ngày 25/09
+  motion.css                                    Token chuyển động, thêm vào tokens.css của repo Astro
+figma/
+  BAN-DO-FILE-FIGMA.md                          10 page, id component, id frame, tình trạng prototype
+tai-lieu-khach/
+  ...DeXuatDichVu...                            Proposal gửi khách, song ngữ (Word + PDF)
+  ...MoTaSanPham...                             Bản mô tả sản phẩm, song ngữ (Word + PDF)
+  tools/                                        Hai script Node dựng lại hai tệp Word
 ```
 
-## Chạy trang web
+## Sản phẩm
 
-Hai tệp trong `web/` là HTML tĩnh, mở trực tiếp bằng trình duyệt hoặc đưa lên bất kỳ máy chủ tĩnh nào:
+BAIKA nhận làm thay việc văn phòng lặp lại của doanh nghiệp: hành chính – văn thư, nhân sự – tiền lương, kế toán – thuế, chăm sóc khách hàng, hỗ trợ kinh doanh, nội dung – livestream, tuân thủ – quy chế, số liệu – báo cáo. Khách gửi yêu cầu qua cổng tiếp nhận và nghiệm thu theo kết quả, không quản lý lao động.
 
-```bash
-python3 -m http.server 8080 --directory web
-```
+Trang gồm 12 section, có công cụ ước tính chạy trên trang và luồng bốn bước để khách gửi hồ sơ.
 
-Phông chữ lấy từ Google Fonts (Spectral cho tiêu đề, Be Vietnam Pro cho nội dung). Không dùng thư viện JavaScript bên ngoài.
+## Việc dev cần làm ở repo Astro
 
-## Lưu ý khi đưa lên baika.vn
+1. Thêm `src/pages/remote-office.astro` và `src/pages/remote-office/yeu-cau.astro`.
+2. Thêm component: Stepper, Dropzone, FileRow, ProgressBar, Toast, Skeleton, Textarea đếm ký tự, chip chọn thời điểm, Sticky CTA bar, Confirmation.
+3. Thêm `tokens/motion.css` vào `src/styles/tokens.css`.
+4. Mở rộng `api/contact.ts`: nhận thêm `nhomviec[]`, `goi`, `quymo`, `thoidiem`, `uoctinh`, `ma_yeu_cau` và danh sách tệp. Tệp không gửi kèm thư được — cách nhận tệp còn chờ chốt.
+5. Trang phải đọc được khi không có JavaScript: luồng bốn bước rút về một form một trang, mất phần tải tệp.
 
-- **Form đăng ký trong `uoc-tinh.html` chưa có nơi nhận dữ liệu.** Bản chạy trên claude.ai lưu vào kho dữ liệu của artifact; bản trong kho này không có phần đó, nên form sẽ hiện thông báo dự phòng kèm số điện thoại và email. Dev cần nối vào CRM, Notion hoặc Google Sheet của BAIKA.
-- **Công cụ ước tính** tính chi phí tự tuyển theo công thức `lương × 1,235 + 1.800.000` (21,5% bảo hiểm phần doanh nghiệp + 2% kinh phí công đoàn + chỗ ngồi, thiết bị, tuyển dụng). Con số 1.800.000 là giả định, cần chốt lại theo số liệu thật.
-- **Bảng giá** trong mọi tệp đang là: Khởi đầu 4.900.000 · Vận hành 9.900.000 · Trọn gói 19.900.000 đồng/tháng, chưa VAT. Sửa giá thì sửa đồng bộ ở `web/index.html`, `web/uoc-tinh.html` và `noi-dung/noi-dung-trang-web.md`.
+## Ranh giới nội dung
 
-## Quy tắc nội dung
+- Không hứa khách hết nghĩa vụ đóng BHXH. Câu đầu trong mục hỏi đáp là câu bắt buộc giữ.
+- Không dùng các chữ “luật sư”, “dịch vụ pháp lý”, “tư vấn pháp luật”, “LEXIS”.
+- Mọi con số chỉ lấy từ spec. Thêm số mới phải hỏi.
+- Không có màu trắng thuần trong CSS: trắng đục dùng `--gray-50`, trắng trong dùng `--opacity-white`.
 
-- Không hứa khách hết nghĩa vụ đóng BHXH. Phần tiết kiệm đến từ việc không phải tuyển thêm người; nghĩa vụ với nhân viên khách đang trực tiếp sử dụng vẫn giữ nguyên.
-- Khách không chỉ đạo trực tiếp cá nhân làm việc; mọi yêu cầu đi qua cổng tiếp nhận và điều phối viên.
-- Tài liệu đối ngoại không dùng các chữ "luật sư", "dịch vụ pháp lý", "tư vấn pháp luật"; nhóm việc số 7 gọi là "Tuân thủ – quy chế nội bộ".
-- Hệ màu: Navy `#0B2545`, Cyan `#22C4DE` (chỉ trên nền navy), Cyan `#00708C` (chữ trên nền trắng), xám `#5A6B7B`. Không dùng Cyan `#00B0CC` cho chữ trên nền trắng.
+## Còn chờ quyết
 
-## Dựng lại tệp Word
-
-```bash
-npm install docx
-node tools/build-de-xuat-dich-vu.js
-```
-
-Hai script cần phông **Spectral** cài sẵn trên máy để bản PDF hiển thị đúng.
+Bộ màu riêng cho Remote Office hay dùng chung `van-hanh` · slug và vị trí trong menu · form 4 ô hay 6 ô · hình thức thanh trượt · con số 1.800.000 trong công thức ước tính · ba mức giá công khai · cách nhận tệp và chính sách lưu 90 ngày · quy tắc sinh mã tra cứu.
 
 ---
 

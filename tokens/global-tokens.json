@@ -1,0 +1,58 @@
+{
+  "source": { "figmaFile": "EXoNVzx2MrGbL7oPkpzZbD", "collection": "Global Tokens", "mode": "light", "exported": "2026-09-25" },
+  "color": {
+    "blue": { "50": "#EDF6FD", "100": "#D6EBFA", "200": "#AFD8F5", "300": "#7CC0EE", "400": "#45A4E3", "500": "#1B87D2", "600": "#0F6BB0", "700": "#0D538B", "800": "#113F6B", "900": "#16255C", "950": "#0B1730" },
+    "gray": { "50": "#F8F8F8", "100": "#F1F1F1", "200": "#E3E3E3", "300": "#D5D5D5", "400": "#C7C7C7", "500": "#A8A8A8", "600": "#8A8A8A", "700": "#6D6D6D", "800": "#515151", "900": "#373737", "950": "#1E1E1E" },
+    "slate": { "50": "#F4F7FA", "100": "#EDF2F7", "200": "#DBE3EC", "300": "#C3CFDC", "400": "#9AAABF", "500": "#6B7C93", "600": "#4E6076", "700": "#3E5069", "800": "#22334B", "900": "#0E1B2E", "950": "#08111D" },
+    "cyan": "#118888",
+    "red": { "100": "#FFC8C8", "200": "#FB3748" },
+    "yellow": { "100": "#FFDB43", "200": "#DFB400" },
+    "green": { "100": "#84EBB4", "200": "#257551" },
+    "page": {
+      "tu-van":      { "dam": "#815901", "trung": "#E79F01", "nhat": "#F7CE7A" },
+      "van-hanh":    { "dam": "#005545", "trung": "#01BB98", "nhat": "#7FE0C5" },
+      "marketing":   { "dam": "#710044", "trung": "#D70082", "nhat": "#FF47B6" },
+      "tai-chinh":   { "dam": "#003F73", "trung": "#0077D9", "nhat": "#9BD0FF" },
+      "phap-ly":     { "dam": "#95212B", "trung": "#FB3748", "nhat": "#FFC8C8" },
+      "cong-nghe-ai":{ "dam": "#5D2E99", "trung": "#9B4DFF", "nhat": "#C4B5FF" },
+      "dao-tao-ceo": { "dam": "#2D3078", "trung": "#5458DE", "nhat": "#A9BEFF" }
+    },
+    "opacity": {
+      "white": { "hex": "#FFFFFF", "alpha": 0.15 },
+      "light": { "hex": "#D5D5D5", "alpha": 0.5 },
+      "gray":  { "hex": "#D5D5D5", "alpha": 0.25 },
+      "dark":  { "hex": "#212121", "alpha": 0.5 }
+    }
+  },
+  "spacing": { "s-1": 4, "s-2": 8, "s-3": 12, "s-4": 16, "s-5": 20, "s-6": 24, "s-8": 32, "s-10": 40, "s-12": 48, "s-16": 64, "s-20": 80, "s-24": 96 },
+  "radius": { "r-xs": 4, "r-sm": 8, "r-md": 12, "r-lg": 16, "r-xl": 24, "r-pill": 999 },
+  "motion": {
+    "duration": { "d-instant": 80, "d-fast": 120, "d-base": 200, "d-slow": 320, "d-page": 480, "d-count": 600 },
+    "easing": {
+      "e-standard": "cubic-bezier(0.2, 0, 0, 1)",
+      "e-enter": "cubic-bezier(0.05, 0.7, 0.1, 1)",
+      "e-exit": "cubic-bezier(0.3, 0, 0.8, 0.15)",
+      "e-spring": "cubic-bezier(0.2, 1.3, 0.4, 1)"
+    }
+  },
+  "typography": [
+    { "name": "display-1", "font": "Be Vietnam Pro", "weight": 600, "size": 80, "lineHeight": "100%" },
+    { "name": "display-2", "font": "Be Vietnam Pro", "weight": 700, "size": 48, "lineHeight": "100%" },
+    { "name": "H-1", "font": "Chakra Petch", "weight": 700, "size": 32, "lineHeight": "36.8px" },
+    { "name": "H-2", "font": "Chakra Petch", "weight": 700, "size": 24, "lineHeight": "29px" },
+    { "name": "H-3", "font": "Chakra Petch", "weight": 500, "size": 19, "lineHeight": "24px" },
+    { "name": "body-lg", "font": "Be Vietnam Pro", "weight": 400, "size": 17, "lineHeight": "130%" },
+    { "name": "body", "font": "Be Vietnam Pro", "weight": 400, "size": 15, "lineHeight": "130%" },
+    { "name": "caption", "font": "Be Vietnam Pro", "weight": 400, "size": 13, "lineHeight": "130%" },
+    { "name": "label", "font": "Be Vietnam Pro", "weight": 300, "size": 11, "lineHeight": "11px" }
+  ],
+  "shadow": {
+    "shadow-1": "0 2px 2px rgb(0 0 0 / 10%)",
+    "shadow-2": "2px 3px 4px rgb(0 0 0 / 30%)",
+    "shadow-3": "4px 6px 5px rgb(0 0 0 / 40%)",
+    "shadow-4": "6px 8px 10px rgb(0 0 0 / 60%)",
+    "shadow-inner": "inset 0 -4px 6px rgb(153 153 153 / 50%)",
+    "shadow-inner-press": "inset 0 4px 12px 4px rgb(0 0 0 / 100%)",
+    "shadow-drop-inner": "inset 0 -4px 6px rgb(153 153 153 / 50%), 0 0 6px 1px rgb(255 255 255 / 50%)"
+  }
+}
